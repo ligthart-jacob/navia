@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html {
+  scrollbar-gutter: stable;
+}
+
+.small-caps {
+  font-variant: small-caps;
+}
+
+.custom-select {
+  width: 19rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  position: relative;
+}
+.custom-select .head {
+  position: relative;
+  font-size: 1rem;
+  padding: 0.5625rem 2.625rem 0.5625rem 1.125rem;
+  background-image: linear-gradient(#A95464, #AF4054);
+  color: white;
+  width: 100%;
+  border-top-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  z-index: 2;
+  overflow: hidden;
+  cursor: pointer;
+  border: 0;
+}
+.custom-select .head::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 1.0625rem;
+  top: 1.1875rem;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 6px solid white;
+}
+.custom-select .body {
+  display: none;
+  position: absolute;
+  width: 100%;
+  list-style-type: none;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  max-height: 740px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+.custom-select .body::-webkit-scrollbar {
+  display: none;
+}
+.custom-select .body li {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  flex-shrink: 0;
+  color: #C86677;
+  padding: 0.625rem 1.125rem;
+  line-height: 1.25rem;
+  cursor: pointer;
+  background: #f7ebed;
+}
+.custom-select .body li:hover {
+  color: white;
+  background: #C86677;
+}
+.custom-select .body li:nth-last-child(1) {
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+}
+.custom-select.open {
+  box-shadow: 0 0.125rem 0.4rem rgba(0, 158, 255, 0.4);
+}
+.custom-select.open ~ label {
+  color: #C86677;
+}
+.custom-select.open .head {
+  color: #C86677;
+  background: white;
+  outline: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.custom-select.open .head::after {
+  border-top-color: #AF4054;
+}
+.custom-select.open .body {
+  z-index: 99;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  display: flex;
+  box-shadow: 0 0.125rem 0.4rem rgba(0, 158, 255, 0.4);
+}/*# sourceMappingURL=global.css.map */
